@@ -1,0 +1,36 @@
+services:
+
+  main:
+    build: ./docker/paper
+    container_name: mc-main
+    volumes:
+      - ./main:/var/paper
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - mc-network
+
+  fallback:
+    build: ./docker/paper
+    container_name: mc-fallback
+    volumes:
+      - ./fallback:/var/paper
+    networks:
+      - mc-network
+
+  velocity:
+    build: ./docker/velocity
+    container_name: mc-velocity
+    ports:
+      - "25565:25577"
+    volumes:
+      - ./velocity:/var/velocity
+    depends_on:
+      - fallback
+      - main
+    networks:
+      - mc-network
+
+networks:
+  mc-network:

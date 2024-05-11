@@ -1,0 +1,12 @@
+.idea
+
+main/*
+!main/config
+
+fallback/*
+!fallback/config
+
+!server.properties
+!eula.txt
+
+velocity/logs/*
