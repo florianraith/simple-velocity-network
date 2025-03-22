@@ -3,7 +3,8 @@ FROM amazoncorretto:21
 WORKDIR /var/build-tools
 
 RUN yum install -y wget git && \
-    wget -O paper.jar https://api.papermc.io/v2/projects/paper/versions/1.20.4/builds/496/downloads/paper-1.20.4-496.jar
+    wget -O paper.jar https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/214/downloads/paper-1.21.4-214.jar
+
 
 VOLUME /var/paper
 WORKDIR /var/paper

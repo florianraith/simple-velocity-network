@@ -3,7 +3,7 @@ FROM amazoncorretto:21
 WORKDIR /var/build-tools
 
 RUN yum install -y wget git && \
-    wget -O velocity.jar https://api.papermc.io/v2/projects/velocity/versions/3.3.0-SNAPSHOT/builds/390/downloads/velocity-3.3.0-SNAPSHOT-390.jar
+    wget -O velocity.jar https://api.papermc.io/v2/projects/velocity/versions/3.4.0-SNAPSHOT/builds/482/downloads/velocity-3.4.0-SNAPSHOT-482.jar
 
 VOLUME /var/velocity
 WORKDIR /var/velocity
