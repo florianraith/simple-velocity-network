@@ -3,6 +3,7 @@ services:
   main:
     build: ./docker/paper
     container_name: mc-main
+    user: "${UID}:${GID}"
     volumes:
       - ./main:/var/paper
     stdin_open: true
@@ -14,6 +15,7 @@ services:
   fallback:
     build: ./docker/paper
     container_name: mc-fallback
+    user: "${UID}:${GID}"
     volumes:
       - ./fallback:/var/paper
     networks:
